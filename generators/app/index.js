@@ -3,6 +3,7 @@ var yeoman = require('yeoman-generator');
 var cremasay = require('../lib/cremasay');
 var mkdirp = require('mkdirp');
 var chalk = require('chalk');
+var globfsConfig = { globOptions: { dot: true }}
 
 module.exports = yeoman.Base.extend({
   prompting: function () {
@@ -19,11 +20,11 @@ module.exports = yeoman.Base.extend({
 
     var prompts = [
       {
-        type    : 'input',
-        name    : 'name',
-        message : 'Your project name',
+        type: 'input',
+        name: 'name',
+        message: 'Your project name',
         required: true,
-        default : this.appname // Default to current folder name
+        default: this.appname
       },
       {
         type: 'input',
@@ -39,11 +40,11 @@ module.exports = yeoman.Base.extend({
   },
 
   writing: function () {
-    var folder = this.destinationPath();
-    this.fs.copy(this.templatePath('static'), folder);
-    this.fs.copy(this.templatePath('static/.*'), folder);
-    this.fs.copyTpl(this.templatePath('package.json'), folder + '/package.json', this.props);
-    mkdirp.sync('src/components');
+    this.fs.copyTpl(
+      this.templatePath('static/**/*'),
+      this.destinationPath(),
+      this.props, {}, globfsConfig
+    );
   },
 
   install: function () {

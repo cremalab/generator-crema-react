@@ -6,13 +6,42 @@ var helpers = require('yeoman-test');
 describe('generator-crema-react:app', function () {
   before(function () {
     return helpers.run(path.join(__dirname, '../generators/app'))
-      .withPrompts({someAnswer: true})
+      .withPrompts({
+        name: 'Crema',
+        description: 'Crema project'
+      })
       .toPromise();
   });
 
   it('creates files', function () {
     assert.file([
-      'dummyfile.txt'
+      'Procfile',
+      '.env-sample',
+      '.babelrc',
+      '.editorconfig',
+      '.eslintrc',
+      '.gitignore',
+      '.npmrc',
+      '.nvmrc',
+      'package.json',
+      'tools/server.js',
+      'src/components/.gitkeep',
+    ]);
+  });
+});
+
+describe('generator-crema-react:component', function () {
+  before(function () {
+    return helpers.run(path.join(__dirname, '../generators/component'))
+      .withPrompts({
+        name: 'Header'
+      })
+      .toPromise();
+  });
+
+  it('creates files', function () {
+    assert.file([
+      'src/components/Header.js'
     ]);
   });
 });

@@ -7,7 +7,7 @@ module.exports = function (message) {
         '\n.:/osyhhyso/:-`      /mh-     ' +
         '\nNN/-.-:/oshdN+      ym-       ' +
         '\nsN/ oNNNNNNNNNNdy: .No        ' + message +
-        '\n`mN.`dNNNNNNNNNNNm oN`        ' + 
+        '\n`mN.`dNNNNNNNNNNNm oN`        ' +
         '\n  `yNs`:dNNNNNNNN`/N-         ' +
         '\n    /mm+`-yNNNNNs dh          ' +
         '\n      /dNs-`/ymN.-N/          ' +
