@@ -1,0 +1,37 @@
+{
+  "name": "<%= name %>",
+  "version": "1.0.0",
+  "description": "<%= description %>",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm-run-all --parallel server:dev test:watch lint:watch",
+    "server:dev": "babel-node tools/server.dev.js",
+    "lint": "esw src/**/*",
+    "lint:watch": "npm run lint -- --watch",
+    "test": "NODE_PATH=./src ava",
+    "test:watch": "NODE_PATH=./src ava --watch",
+    "build": "webpack -p --config webpack.config.prod.js",
+    "build:prod": "NODE_ENV=production npm run build",
+    "__postinstall": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cremalab/crema-react-boilerplate.git"
+  },
+  "keywords": [
+    "react",
+    "boilerplate"
+  ],
+  "author": "Crema",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cremalab/crema-react-boilerplate/issues"
+  },
+  "homepage": "https://github.com/cremalab/crema-react-boilerplate#readme",
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    
+  }
+}
