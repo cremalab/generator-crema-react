@@ -25,23 +25,7 @@ describe('generator-crema-react:app', function () {
       '.nvmrc',
       'package.json',
       'tools/server.js',
-      'src/components/.gitkeep',
-    ]);
-  });
-});
-
-describe('generator-crema-react:component', function () {
-  before(function () {
-    return helpers.run(path.join(__dirname, '../generators/component'))
-      .withPrompts({
-        name: 'Header'
-      })
-      .toPromise();
-  });
-
-  it('creates files', function () {
-    assert.file([
-      'src/components/Header.js'
+      'src/components/.gitkeep'
     ]);
   });
 });
