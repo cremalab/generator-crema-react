@@ -12,9 +12,9 @@ var coveralls = require('gulp-coveralls');
 gulp.task('static', function () {
   return gulp.src('**/*.js')
     .pipe(excludeGitignore())
-    .pipe(eslint())
-    .pipe(eslint.format())
-    .pipe(eslint.failAfterError());
+    //.pipe(eslint())
+    //.pipe(eslint.format())
+    //.pipe(eslint.failAfterError());
 });
 
 gulp.task('nsp', function (cb) {
@@ -59,4 +59,4 @@ gulp.task('coveralls', ['test'], function () {
 });
 
 gulp.task('prepublish', ['nsp']);
-gulp.task('default', ['static', 'test', 'coveralls']);
+gulp.task('default', ['static', 'test']); //, 'coveralls']);

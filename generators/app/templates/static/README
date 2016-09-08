@@ -1,0 +1,19 @@
+# <%= name %>
+
+<%= description %>
+
+# Commands
+## Setup
+`npm install`
+
+## Start
+
+The start command runs the server along with linting and testing watchers
+
+`npm start`
+
+## Test
+
+Run standalone testing for creating standalone functions.  This is great when developing utility and redux functions
+
+`npm run test:watch`

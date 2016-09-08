@@ -10,10 +10,24 @@ npm install -g yo
 npm install -g generator-crema-react
 ```
 
-Then generate your new project:
+## Usage
+
+Create a directory for your new app.
+
+```bash
+mkdir my-new-app; cd my-new-app/
+```
+
+Generate your app and follow the prompts.
 
 ```bash
 yo crema-react
+```
+
+Start your brand new app! 💥
+
+```bash
+npm start
 ```
 
 ## Getting To Know Yeoman
